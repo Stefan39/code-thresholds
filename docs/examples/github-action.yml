@@ -1,0 +1,26 @@
+# .github/workflows/code-thresholds.yml
+#
+# Checks only the PHP files a pull request changes. Requires
+# `stejac/code-thresholds` in require-dev.
+name: Code thresholds
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  thresholds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The base ref must be available locally for the diff.
+          fetch-depth: 0
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: vendor/bin/code-thresholds --base=origin/${{ github.base_ref }}

@@ -1,0 +1,54 @@
+{
+    "name": "stejac/code-thresholds",
+    "description": "Dependency-free size and complexity gate for PHP that checks only changed files: method count, parameters, returns, function length, nesting depth, unused variables.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "static-analysis",
+        "code-quality",
+        "complexity",
+        "pre-commit",
+        "ci"
+    ],
+    "homepage": "https://github.com/Stefan39/code-thresholds",
+    "authors": [
+        {
+            "name": "Stefan Jacomeit",
+            "email": "stefan@jacomeit.de",
+            "homepage": "https://www.jacomeit.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "ext-tokenizer": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stejac\\CodeThresholds\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stejac\\CodeThresholds\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/code-thresholds"
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse --memory-limit=1G",
+        "cs": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
+        "thresholds": "bin/code-thresholds --all"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

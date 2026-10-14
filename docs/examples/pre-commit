@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# .git/hooks/pre-commit (make it executable: chmod +x .git/hooks/pre-commit)
+#
+# Checks the PHP files staged for this commit. Fast enough to run on every
+# commit because it never looks at the rest of the code base.
+
+if [ ! -x vendor/bin/code-thresholds ]; then
+    echo "pre-commit: vendor/bin/code-thresholds not found, skipping." >&2
+    exit 0
+fi
+
+exec vendor/bin/code-thresholds

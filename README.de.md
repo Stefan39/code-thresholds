@@ -33,6 +33,8 @@ Ein Check, der etwas meldet, das ein Projekt gar nicht durchsetzt, ist schlechte
 
 Gemessen wird ausschließlich auf `token_get_all()`, nie mit regulären Ausdrücken. Ein Regex über String-Literale hält die Lücke zwischen zwei Array-Schlüsseln für ein eigenes Literal.
 
+Wie es dazu kam, steht im Blog: [SonarCloud am 50k-Limit: Warum ich meine Codeprüfung vor den Commit verlegt habe](https://www.jacomeit.de/blog/sonarcloud-am-50k-limit-codepruefung-vor-dem-commit).
+
 ## Schnellstart
 
 ```bash

@@ -33,6 +33,8 @@ A check that reports something a project does not really enforce is worse than n
 
 Everything is measured on `token_get_all()`, never with regular expressions. A regex over string literals matches the gap between two array keys as if it were a literal of its own.
 
+The story behind it, in German: [SonarCloud am 50k-Limit: Warum ich meine Codeprüfung vor den Commit verlegt habe](https://www.jacomeit.de/blog/sonarcloud-am-50k-limit-codepruefung-vor-dem-commit).
+
 ## Quickstart
 
 ```bash
